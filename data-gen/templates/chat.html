@@ -1,0 +1,13 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+{% include "base.css" %}
+body { background: #e9e2d8; min-height: 700px; }
+.top { background: #1f6f63; color: #fff; padding: 14px 16px; }
+.top b { display: block; } .top small { opacity: .8; }
+.b { margin: 8px 12px; padding: 8px 11px; border-radius: 9px; max-width: 290px; font-size: 15px; line-height: 1.35; clear: both; }
+.them { background: #fff; float: left; } .me { background: #d6f5c4; float: right; }
+</style></head><body>
+<div class="top"><b>{{ name }}</b><small>{{ phone }}</small></div>
+{% for m in messages %}<div class="b {{ m.who }}">{{ m.text }}</div>{% endfor %}
+<div style="clear:both"></div>
+<div class="wm">SYNTHETIC</div>
+</body></html>

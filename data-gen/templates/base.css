@@ -1,0 +1,4 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: Roboto, "Noto Sans", "Noto Sans Devanagari", Arial, sans-serif; width: 390px; }
+.wm { position: fixed; bottom: 8px; right: 10px; font-size: 10px; color: rgba(200,0,0,.55);
+      letter-spacing: 2px; font-weight: 700; }
