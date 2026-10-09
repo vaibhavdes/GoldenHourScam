@@ -1,0 +1,15 @@
+fastapi>=0.115
+uvicorn[standard]>=0.30
+pydantic>=2.7
+pydantic-settings>=2.3
+python-multipart>=0.0.9
+pyyaml>=6.0
+google-genai>=1.30
+google-adk>=2.0
+google-cloud-firestore>=2.16
+google-cloud-storage>=2.17
+google-cloud-dlp>=3.18
+google-cloud-tasks>=2.16
+networkx>=3.3
+pytest>=8.2
+httpx>=0.27
