@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-10-09T10:51:59.589140+00:00",
+  "scope": "Real deployed desktop Chromium; temporary labelled synthetic input; not physical-device or human-impact validation",
+  "checks": {
+    "no_login_prompt": true,
+    "normal_report_start": true,
+    "session_survives_reload": true,
+    "file_selection": true,
+    "file_removal": true,
+    "same_file_reselection_fixed": true,
+    "real_browser_extraction": true,
+    "reference_amount_source_checked": true,
+    "confirm_to_ready_pack": true,
+    "acknowledgement_saved": true,
+    "calendar_downloaded": true,
+    "calendar_three_valid_utc_events": true,
+    "calendar_no_access_credentials": true,
+    "helper_link_created": true,
+    "owned_report_list": true,
+    "other_browser_list_empty": true,
+    "other_browser_report_blocked": true,
+    "official_guidance_eight_cards": true,
+    "no_example_start_button": true,
+    "mobile_360_no_page_overflow": true,
+    "large_text_no_page_overflow": true,
+    "dark_mode_rendered": true
+  },
+  "harness_note": "After attachment/extraction assertions passed, an unsupported dynamic-import report-write failed in the CLI sandbox; the observed UI and subsequent assertions are recorded using normal file tools. Initial application issue is retained separately.",
+  "screenshots": [
+    "docs/images/home.png",
+    "docs/images/guidance.png"
+  ],
+  "passed_checks": 22,
+  "cleanup_report": "product_cleanup_2026_10_09.json"
+}

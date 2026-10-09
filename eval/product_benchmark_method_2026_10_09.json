@@ -1,0 +1,12 @@
+{
+  "seed": 20261009,
+  "generated_cases": 80,
+  "test_cases": 40,
+  "countries": {
+    "IN": 33,
+    "MY": 7
+  },
+  "synthetic": true,
+  "identical_artifact_hashes_vs_original": 0,
+  "method": "Fresh instances using the same synthetic generator/templates, not an independent real-world distribution. Runtime extraction prompts/validators frozen before this run; all selected cases retained. Eight unobservable masked accounts retained in primary denominator; secondary visibility diagnosed using renderer rules. No test-based prompt tuning or rerun."
+}

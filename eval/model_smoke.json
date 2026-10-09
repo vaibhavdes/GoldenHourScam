@@ -1,0 +1,78 @@
+{
+  "checked_at": "2026-10-07T16:47:30.345675+00:00",
+  "provider": "vertex",
+  "project": "goldenhour-aicup-2026-vk1007",
+  "region": "us",
+  "results": [
+    {
+      "role": "main",
+      "model": "gemini-3.8-flash",
+      "ok": true,
+      "seconds": 4.928,
+      "usage": {
+        "cache_tokens_details": null,
+        "cached_content_token_count": null,
+        "candidates_token_count": 5,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 5
+          }
+        ],
+        "prompt_token_count": 8,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 8
+          }
+        ],
+        "thoughts_token_count": 94,
+        "tool_use_prompt_token_count": null,
+        "tool_use_prompt_tokens_details": null,
+        "total_token_count": 107,
+        "traffic_type": "ON_DEMAND"
+      }
+    },
+    {
+      "role": "lite",
+      "model": "gemini-3.1-flash-lite",
+      "ok": true,
+      "seconds": 0.927,
+      "usage": {
+        "cache_tokens_details": null,
+        "cached_content_token_count": null,
+        "candidates_token_count": 5,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 5
+          }
+        ],
+        "prompt_token_count": 8,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 8
+          }
+        ],
+        "thoughts_token_count": null,
+        "tool_use_prompt_token_count": null,
+        "tool_use_prompt_tokens_details": null,
+        "total_token_count": 13,
+        "traffic_type": "ON_DEMAND"
+      }
+    },
+    {
+      "role": "live",
+      "model": "gemini-3.8-live",
+      "ok": true,
+      "first_audio_seconds": 2.109
+    },
+    {
+      "role": "live_fallback",
+      "model": "gemini-3.8-live",
+      "ok": true,
+      "first_audio_seconds": 4.097
+    }
+  ]
+}

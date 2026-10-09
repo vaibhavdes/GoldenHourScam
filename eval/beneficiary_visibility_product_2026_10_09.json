@@ -1,0 +1,66 @@
+{
+  "split": "test",
+  "cases": 40,
+  "primary_denominator_unchanged": 78,
+  "groups": {
+    "observable": {
+      "total": 70,
+      "raw_hit": 70,
+      "checked_hit": 65,
+      "raw_accuracy": 1.0,
+      "checked_accuracy": 0.9285714285714286
+    },
+    "masked_full_account": {
+      "total": 8,
+      "raw_hit": 0,
+      "checked_hit": 0,
+      "raw_accuracy": 0.0,
+      "checked_accuracy": 0.0
+    }
+  },
+  "masked_transfers": [
+    {
+      "case": "GH-SYN0016",
+      "utr": "645506473691",
+      "reason": "IN IMPS exposes only masked destination digits; no receipt with the full account was rendered"
+    },
+    {
+      "case": "GH-SYN0026",
+      "utr": "557916843957",
+      "reason": "IN IMPS exposes only masked destination digits; no receipt with the full account was rendered"
+    },
+    {
+      "case": "GH-SYN0026",
+      "utr": "559145094980",
+      "reason": "IN IMPS exposes only masked destination digits; no receipt with the full account was rendered"
+    },
+    {
+      "case": "GH-SYN0042",
+      "utr": "659696299511",
+      "reason": "IN IMPS exposes only masked destination digits; no receipt with the full account was rendered"
+    },
+    {
+      "case": "GH-SYN0042",
+      "utr": "634064920944",
+      "reason": "IN IMPS exposes only masked destination digits; no receipt with the full account was rendered"
+    },
+    {
+      "case": "GH-SYN0057",
+      "utr": "610541250169",
+      "reason": "IN IMPS exposes only masked destination digits; no receipt with the full account was rendered"
+    },
+    {
+      "case": "GH-SYN0057",
+      "utr": "678118007980",
+      "reason": "IN IMPS exposes only masked destination digits; no receipt with the full account was rendered"
+    },
+    {
+      "case": "GH-SYN0015",
+      "utr": "617444305412",
+      "reason": "IN IMPS exposes only masked destination digits; no receipt with the full account was rendered"
+    }
+  ],
+  "method": "Deterministic generator-rule diagnostic, not model-output-based exclusion. The primary full-identifier metric retains these misses.",
+  "generator_sha256": "041080a3fed6f0fb9fb5724260e3f7df9fadd9043dc314624c544bc5914614ce",
+  "sms_formats_sha256": "f3e3826ce30cfeb7f305ef1b3b10e603545265ef1d3a620bf4d0ca5a08cc422a"
+}

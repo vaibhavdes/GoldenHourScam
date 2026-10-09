@@ -1,0 +1,62 @@
+{
+  "checked_at": "2026-10-09T10:32:48.697633+00:00",
+  "revision": "goldenhour-api-00016-t9m",
+  "scope": "Temporary synthetic request inputs to the real deployed product; all temporary cases/evidence/tasks removed. Functional checks, not accuracy or human-impact measurements.",
+  "checks": {
+    "browser_owned_configuration": true,
+    "only_signing_secret_mounted": true,
+    "health": true,
+    "empty_anonymous_workspace": true,
+    "official_guidance": true,
+    "retired_endpoints_removed": true,
+    "anonymous_callback_denied": true,
+    "IN_not_preseeded": true,
+    "IN_unowned_get_blocked": true,
+    "MY_not_preseeded": true,
+    "MY_unowned_get_blocked": true,
+    "SG_not_preseeded": true,
+    "SG_unowned_get_blocked": true,
+    "IN_real_extraction_checked": true,
+    "IN_confirmed_pack_ready": true,
+    "IN_only_own_report": true,
+    "IN_summary_excludes_victim_data": true,
+    "IN_hold_amount_correct": true,
+    "MY_real_extraction_checked": true,
+    "MY_confirmed_pack_ready": true,
+    "MY_only_own_report": true,
+    "MY_summary_excludes_victim_data": true,
+    "MY_hold_amount_correct": true,
+    "SG_real_extraction_checked": true,
+    "SG_confirmed_pack_ready": true,
+    "SG_only_own_report": true,
+    "SG_summary_excludes_victim_data": true,
+    "SG_hold_amount_correct": true,
+    "cross_case_owner_blocked": true,
+    "malformed_capabilities_rejected": true,
+    "secret_manager_signing_matches_runtime": true,
+    "helper_reference_masked": true,
+    "reminders_scheduled_delivery_honest": true,
+    "oidc_tasks": true,
+    "oidc_callback_accepted": true,
+    "real_live_audio": true
+  },
+  "timings_seconds": {
+    "IN": 27.121,
+    "MY": 34.83,
+    "SG": 34.43,
+    "live": {
+      "audio_chunks": 88,
+      "first_audio_seconds": 1.404,
+      "mentions_1930": true,
+      "transcript": "First, take a deep breath; this is not your fault, as scammers are professionals. Immediately call 1930, which is India's national cyber crime helpline. After that, contact your bank's fraud department right away to report the transaction."
+    }
+  },
+  "errors": [],
+  "temporary_cases_removed": [
+    "GH-685A96A4",
+    "GH-58A68C43",
+    "GH-91CC70BC"
+  ],
+  "remaining_case_count": 0,
+  "remaining_judging_count": 0
+}
