@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f3d3e" />
+    <meta name="description" content="GoldenHour - AI first responder for scam victims. Act in the first hour." />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+    <title>GoldenHour</title>
+      <script>
+      // If a stale page references assets from an older release, reload once to get the current build.
+      window.addEventListener("error", function (e) {
+        var t = e.target;
+        if (t && (t.tagName === "SCRIPT" || t.tagName === "LINK") && !sessionStorage.getItem("gh-asset-reload")) {
+          sessionStorage.setItem("gh-asset-reload", "1");
+          location.reload();
+        }
+      }, true);
+      window.addEventListener("load", function () { setTimeout(function () { sessionStorage.removeItem("gh-asset-reload"); }, 5000); });
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
