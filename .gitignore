@@ -1,0 +1,35 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*service-account*.json
+*credentials*.json
+*.pem
+*.key
+
+# Dependencies, generated output and local tooling
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+web/dist/
+data-gen/out/
+api/seed/
+.runtime/
+.pytest_cache/
+.firebase/
+.playwright-cli/
+output/
+.adk/
+.codex/
+.agents/
+.DS_Store
+*.tsbuildinfo
+*.log
+
+# Private planning/research (also preserved outside the repository)
+docs/competitive-*
+docs/cross-theme-*
+docs/public-entry-*
+docs/hackathon-assessment-*
+docs/*evidence*.json
