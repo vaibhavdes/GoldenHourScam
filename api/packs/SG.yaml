@@ -1,0 +1,66 @@
+code: SG
+name: Singapore
+currency: SGD
+languages: [en]
+step_order: [bank_block, call_helpline, file_report, evidence]
+helplines:
+  - {id: national, label: "ScamShield Helpline", number: "1799", primary: true}
+  - {id: police, label: "Police emergency", number: "999"}
+portal:
+  name: "Singapore Police Force e-Services (online police report)"
+  url: "https://eservices1.police.gov.sg/phub/eservices/landingpage/police-report"
+  narrative_min_chars: 50
+  narrative_forbidden_chars: ""
+  evidence_max_mb: 10
+  evidence_types: [png, jpg, jpeg, pdf]
+  followup_hours: 24
+  followup_note: "Use your bank's 24/7 scam hotline or in-app kill switch first, then lodge the police report."
+id_formats:
+  utr_upi: '^[A-Za-z0-9]{6,30}$'
+  utr_neft: '^[A-Za-z0-9]{6,30}$'
+  vpa: '^.+$'
+  ifsc: '^.+$'
+  phone: '^(\+?65[\-\s]?)?[89]\d{7}$'
+  account: '^\d{7,14}$'
+category: "Scam"
+subcategory_map:
+  investment: "Investment scam"
+  digital_arrest: "Government official impersonation scam"
+  task_job: "Job scam"
+  sextortion: "Sextortion"
+  phishing_otp: "Phishing scam"
+  impersonation: "Impersonation scam"
+  shopping: "E-commerce scam"
+  recovery_scam: "Fund recovery scam"
+  unknown: "Other scam"
+fields:
+  - {key: incident_datetime, label: "Date & time of incident", required: true}
+  - {key: mode, label: "Payment method (PayNow / FAST / card)", required: true}
+  - {key: victim_account, label: "Your bank account", required: true}
+  - {key: utr, label: "Transaction reference", required: true}
+  - {key: amount, label: "Amount", required: true}
+  - {key: txn_datetime, label: "Transaction time", required: true}
+  - {key: suspect_account, label: "Recipient account / PayNow ID", required: false}
+  - {key: suspect_phone, label: "Scammer phone number", required: false}
+call_script:
+  - q: "What happened?"
+    a_template: "I fell for a {scam_label}. First transfer at {first_time}. Total {total}."
+  - q: "Transaction references?"
+    a_template: "{utr_list}"
+  - q: "Your bank?"
+    a_template: "{victim_accounts}"
+  - q: "Recipient?"
+    a_template: "{beneficiaries}"
+  - q: "Scammer contact?"
+    a_template: "{suspects}"
+lockdown:
+  common:
+    - "Activate your bank's kill switch (in-app or 24/7 hotline) to block your accounts now."
+    - "Install the ScamShield app and report the scam number."
+    - "Do not pay anyone offering fund recovery services."
+  digital_arrest:
+    - "Government officials will never ask you to transfer money or reveal banking credentials over a call."
+restoration:
+  enabled: false
+  note: "Banks under the Shared Responsibility Framework must assess phishing losses; ask your bank."
+disclaimer: "GoldenHour prepares drafts only, is not affiliated with SPF or ScamShield, and is not legal advice."

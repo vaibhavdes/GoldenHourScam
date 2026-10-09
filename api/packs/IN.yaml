@@ -1,0 +1,172 @@
+code: IN
+name: India
+currency: INR
+languages:
+- en
+- hi
+helplines:
+- id: national
+  label: National Cyber Crime Helpline
+  number: '1930'
+  primary: true
+- id: police
+  label: Police emergency
+  number: '112'
+portal:
+  name: National Cyber Crime Reporting Portal (NCRP)
+  url: https://cybercrime.gov.in
+  narrative_min_chars: 200
+  narrative_forbidden_chars: '#$@^*`''‘’~|!"'
+  evidence_max_mb: 10
+  evidence_types:
+  - png
+  - jpeg
+  - jpg
+  - jfif
+  - gif
+  - bmp
+  - pdf
+  - doc
+  - mp4
+  - mov
+  followup_hours: 24
+  followup_note: After calling 1930 you receive an acknowledgement SMS. Complete the complaint on the portal within 24 hours
+    using that number.
+id_formats:
+  utr_upi: ^\d{12}$
+  utr_neft: ^[A-Z]{4}[A-Z0-9]\d{6,17}$
+  vpa: ^[a-zA-Z0-9.\-_]{2,256}@[a-zA-Z]{2,64}$
+  ifsc: ^[A-Z]{4}0[A-Z0-9]{6}$
+  phone: ^(\+91[\-\s]?)?[6-9]\d{9}$
+  account: ^\d{9,18}$
+category: Online Financial Fraud
+subcategory_map:
+  investment: Investment Scam / Trading Scam
+  digital_arrest: Impersonation (Digital Arrest)
+  task_job: Online Job / Task Fraud
+  sextortion: Sextortion
+  phishing_otp: UPI / Internet Banking Fraud
+  impersonation: Impersonation Fraud
+  shopping: E-Commerce Fraud
+  recovery_scam: Fraud by Fake Recovery Agent
+  unknown: Other Financial Fraud
+fields:
+- key: category
+  label: Category of complaint
+  required: true
+- key: subcategory
+  label: Sub-category
+  required: true
+- key: incident_datetime
+  label: Approximate date & time of incident
+  required: true
+- key: mode
+  label: Mode of money transfer (Bank / UPI / Wallet / Merchant)
+  required: true
+- key: victim_account
+  label: Your account / card (from which debited)
+  required: true
+- key: utr
+  label: Transaction ID / UTR number
+  required: true
+- key: amount
+  label: Amount debited
+  required: true
+- key: txn_datetime
+  label: Transaction date & time
+  required: true
+- key: suspect_account
+  label: Suspect account / UPI ID
+  required: false
+- key: suspect_phone
+  label: Suspect mobile number
+  required: false
+- key: suspect_url
+  label: Suspect website / app / social handle
+  required: false
+call_script:
+- q: What happened and when?
+  a_template: I was cheated in a {scam_label}. The first transfer was at {first_time}. Total loss {total}.
+- q: Transaction ID / UTR?
+  a_template: '{utr_list}'
+- q: Which bank or UPI app did you pay from?
+  a_template: '{victim_accounts}'
+- q: Where did the money go?
+  a_template: '{beneficiaries}'
+- q: Any phone number or link the fraudster used?
+  a_template: '{suspects}'
+lockdown:
+  common:
+  - Ask your bank to block your debit card, UPI and net banking until you are safe.
+  - Change your UPI PIN and net-banking password from a trusted device.
+  - 'Warn family members: fraudsters may contact them next.'
+  - Do not pay anyone who promises to recover your money. That is a second scam.
+  digital_arrest:
+  - There is no 'digital arrest' in Indian law. Police never demand money on video calls.
+  - Do not reply to the 'officer' again. Block the number after saving screenshots.
+  investment:
+  - Stop all further 'tax', 'withdrawal fee' or 'upgrade' payments. Profits shown are fake.
+  - Uninstall the trading app/APK only after taking screenshots of balances and chats.
+  task_job:
+  - Leave the Telegram/WhatsApp task groups after screenshots. Never pay to 'unlock' earnings.
+  sextortion:
+  - Do not pay. Payment leads to more demands. Report the profile on the platform.
+  - Use StopNCII.org to help prevent sharing of intimate images.
+  phishing_otp:
+  - Remove any screen-sharing / remote-access app (AnyDesk, TeamViewer, QuickSupport).
+  - Check your SIM still works; if not, contact your telecom operator (SIM-swap).
+  impersonation:
+  - Call the real person/organisation using a number you already know, not the one that contacted you.
+  shopping:
+  - Raise a dispute with the payment app or card issuer for undelivered goods.
+  recovery_scam:
+  - Real police and banks never charge a fee to recover money.
+restoration:
+  enabled: true
+  note: If money is held in the fraudster's account, request restoration through the NCRP Money Restoration Module with your
+    acknowledgement/complaint number.
+disclaimer: GoldenHour prepares drafts only. It does not file complaints or contact anyone for you, is not a government service,
+  and is not legal advice.
+lockdown_hi:
+  common:
+  - सुरक्षित होने तक बैंक से डेबिट कार्ड, UPI और नेट बैंकिंग बंद करवाएँ।
+  - भरोसेमंद डिवाइस से UPI PIN और नेट बैंकिंग पासवर्ड बदलें।
+  - 'परिवार को सावधान करें: धोखेबाज उनसे भी संपर्क कर सकते हैं।'
+  - पैसे वापस दिलाने का वादा करने वाले को भुगतान न करें। यह दूसरी धोखाधड़ी हो सकती है।
+  digital_arrest:
+  - वीडियो कॉल पर डिजिटल अरेस्ट के नाम पर धमकी धोखाधड़ी है। पुलिस वीडियो कॉल पर पैसे नहीं माँगती।
+  - स्क्रीनशॉट सहेजने के बाद नकली अधिकारी का नंबर ब्लॉक करें। दोबारा जवाब न दें।
+  investment:
+  - टैक्स, निकासी शुल्क या अपग्रेड के नाम पर और पैसे न भेजें। दिखाए गए लाभ नकली हो सकते हैं।
+  - बैलेंस और चैट के स्क्रीनशॉट लेने के बाद ही ट्रेडिंग ऐप हटाएँ।
+  task_job:
+  - स्क्रीनशॉट सहेजकर टास्क समूह छोड़ दें। कमाई खोलने के लिए पैसे न दें।
+  sextortion:
+  - भुगतान न करें। इससे और माँगें बढ़ सकती हैं। प्लेटफ़ॉर्म पर प्रोफ़ाइल रिपोर्ट करें।
+  - अंतरंग तस्वीरों के प्रसार को रोकने के विकल्प StopNCII.org पर देखें।
+  phishing_otp:
+  - स्क्रीन शेयरिंग या रिमोट एक्सेस ऐप हटाएँ।
+  - SIM काम नहीं कर रही हो तो तुरंत टेलीकॉम कंपनी से संपर्क करें।
+  impersonation:
+  - व्यक्ति या संस्था को अपने पहले से ज्ञात नंबर पर कॉल करें, संपर्क करने वाले के नंबर पर नहीं।
+  shopping:
+  - सामान नहीं मिला हो तो पेमेंट ऐप या कार्ड जारीकर्ता से विवाद दर्ज करें।
+  recovery_scam:
+  - पैसे वापस दिलाने के लिए शुल्क माँगने वाले से सावधान रहें।
+sos_labels_hi:
+  call_helpline: अभी साइबर अपराध हेल्पलाइन 1930 पर कॉल करें
+  bank_block: बैंक की 24 घंटे की धोखाधड़ी हेल्पलाइन पर कॉल करें
+  evidence: जानकारी भरने के लिए स्क्रीनशॉट डालें
+  file_report: साइबर अपराध पोर्टल पर स्वयं शिकायत पूरी करें
+call_script_hi:
+- q: क्या हुआ और कब?
+  a_template: मेरे साथ {scam_label} हुई। पहला ट्रांसफर {first_time} पर हुआ। कुल राशि {total}।
+- q: ट्रांजैक्शन ID / UTR क्या है?
+  a_template: '{utr_list}'
+- q: किस बैंक या UPI ऐप से भुगतान हुआ?
+  a_template: '{victim_accounts}'
+- q: पैसे कहाँ गए?
+  a_template: '{beneficiaries}'
+- q: धोखेबाज ने कौन सा नंबर या लिंक इस्तेमाल किया?
+  a_template: '{suspects}'
+followup_note_hi: 1930 पर कॉल के बाद मिली पावती संख्या से 24 घंटे के भीतर पोर्टल पर शिकायत पूरी करें।

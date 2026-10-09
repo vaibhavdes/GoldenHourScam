@@ -1,0 +1,73 @@
+code: MY
+name: Malaysia
+currency: MYR
+languages: [ms, en]
+helplines:
+  - {id: national, label: "National Scam Response Centre (NSRC)", number: "997", primary: true}
+  - {id: police, label: "Police emergency", number: "999"}
+portal:
+  name: "Police report at the nearest police station"
+  url: "https://nfcc.jpm.gov.my/index.php/en/component/content/article/about-nsrc?Itemid=113&catid=26"
+  narrative_min_chars: 50
+  narrative_forbidden_chars: ""
+  evidence_max_mb: 10
+  evidence_types: [png, jpg, jpeg, pdf]
+  followup_hours: 24
+  followup_note: "After contacting your bank or NSRC 997, file a separate police report at the nearest station within 24 hours. Keep your report reference and follow up with your bank and the assigned investigating officer."
+sos_labels:
+  file_report: "File a separate police report at the nearest station within 24 hours after contacting your bank or NSRC 997"
+sos_labels_ms:
+  file_report: "Buat laporan polis berasingan di balai terdekat dalam 24 jam selepas menghubungi bank atau NSRC 997"
+id_formats:
+  utr_upi: '^[A-Za-z0-9]{8,30}$'
+  utr_neft: '^[A-Za-z0-9]{8,30}$'
+  vpa: '^.+$'
+  ifsc: '^.+$'
+  phone: '^(\+?60[\-\s]?)?0?1\d{8,9}$'
+  account: '^\d{8,17}$'
+category: "Online Financial Fraud"
+subcategory_map:
+  investment: "Penipuan pelaburan (investment)"
+  digital_arrest: "Penyamaran pegawai (Macau scam)"
+  task_job: "Penipuan kerja (job/task)"
+  sextortion: "Sextortion"
+  phishing_otp: "Phishing / OTP"
+  impersonation: "Penyamaran (impersonation)"
+  shopping: "Penipuan jual beli online"
+  recovery_scam: "Penipuan pemulihan dana"
+  unknown: "Lain-lain"
+fields:
+  - {key: incident_datetime, label: "Tarikh & masa kejadian", required: true}
+  - {key: mode, label: "Kaedah pindahan (DuitNow / IBG / kad)", required: true}
+  - {key: victim_account, label: "Akaun anda", required: true}
+  - {key: utr, label: "Nombor rujukan transaksi", required: true}
+  - {key: amount, label: "Jumlah", required: true}
+  - {key: txn_datetime, label: "Masa transaksi", required: true}
+  - {key: suspect_account, label: "Akaun / nombor penerima", required: true}
+  - {key: suspect_phone, label: "Nombor telefon suspek", required: false}
+call_script:
+  - q: "Apa yang berlaku dan bila?"
+    a_template: "Saya ditipu ({scam_label}). Pindahan pertama pada {first_time}. Jumlah kerugian {total}."
+  - q: "Nombor rujukan transaksi?"
+    a_template: "{utr_list}"
+  - q: "Dari bank mana?"
+    a_template: "{victim_accounts}"
+  - q: "Akaun penerima?"
+    a_template: "{beneficiaries}"
+  - q: "Nombor telefon / pautan suspek?"
+    a_template: "{suspects}"
+lockdown:
+  common:
+    - "Hubungi talian 24 jam bank anda dan gunakan 'kill switch' untuk sekat akaun."
+    - "Tukar kata laluan perbankan dari peranti yang dipercayai."
+    - "Jangan bayar sesiapa yang menjanjikan pemulihan wang. Itu penipuan kedua."
+  digital_arrest:
+    - "Polis/BNM tidak akan meminta anda memindahkan wang ke 'akaun selamat'."
+  investment:
+    - "Hentikan semua bayaran 'cukai' atau 'yuran pengeluaran'."
+  phishing_otp:
+    - "Padam aplikasi APK atau perkongsian skrin yang dipasang atas arahan penipu."
+restoration:
+  enabled: false
+  note: "Ask your bank about the status of funds frozen via NSRC."
+disclaimer: "GoldenHour menyediakan draf sahaja dan bukan perkhidmatan kerajaan. GoldenHour prepares drafts only and is not a government service."
