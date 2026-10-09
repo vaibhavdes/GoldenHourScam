@@ -1,0 +1,16 @@
+"""Public scam-awareness guidance based on published official advisories.
+
+These are warning signs, not invented reports or financial records.
+"""
+INDIA = 'https://cybercrime.gov.in/webform/video-category.aspx'
+SHIELD = 'https://www.scamshield.gov.sg/i-want-protection-from-scams/learn-to-recognise-scams/'
+PATTERNS = [
+    {'id':'digital_arrest','title':'Threats from someone claiming to be police','signs':'Pressure to stay on a video call, keep the matter secret or transfer money to a supposed safe account.','action':'End the call and verify independently. If money was sent, contact your bank and the official reporting channel.','source':'National Cybercrime Reporting Portal','url':'https://cybercrime.gov.in/pdf/Advisories/ADVISORYTAU-ADV-003DigitalArrest06.03.2025.pdf'},
+    {'id':'investment','title':'Profits shown, withdrawals blocked','signs':'An investment contact promises attractive returns, then demands more payments before you can withdraw.','action':'Stop further payments. Preserve the messages, payment receipts and account details.','source':'ScamShield','url':SHIELD+'investment-scams/'},
+    {'id':'task_job','title':'Paying to complete an online job','signs':'A job or task offer asks you to deposit money, make advance purchases or pay to unlock earnings.','action':'Do not send another payment. Keep the job advertisement and the conversation.','source':'ScamShield','url':SHIELD+'job-scams/'},
+    {'id':'phishing_otp','title':'A message asks for banking credentials','signs':'An unexpected link or caller asks for a password, OTP or payment to keep an account active.','action':'Open the bank app yourself or call the bank using a trusted number. Never share an OTP or PIN.','source':'ScamShield','url':SHIELD+'phishing-scams/'},
+    {'id':'impersonation','title':'An urgent request from a familiar name','signs':'A person claiming to be a relative, colleague or service provider requests a quick transfer from a new contact.','action':'Verify with the person through a number you already know before paying.','source':'ScamShield','url':'https://www.scamshield.gov.sg/i-want-protection-from-scams/introduction-to-scams/'},
+    {'id':'shopping','title':'A seller moves payment outside the marketplace','signs':'The seller pressures you to pay by direct transfer or follow a payment link away from the platform.','action':'Keep the listing, seller contact and payment reference. Use the platform and bank support channels.','source':'ScamShield','url':'https://www.scamshield.gov.sg/'},
+    {'id':'sextortion','title':'Threats to share private content','signs':'Someone threatens to distribute personal content unless you pay or provide more information.','action':'Preserve the threatening messages and contact police. Do not upload intimate images to this service.','source':'National Cybercrime Reporting Portal','url':INDIA},
+    {'id':'recovery_scam','title':'A stranger offers to recover your money','signs':'A recovery offer asks for an upfront fee, banking password, remote access or another transfer.','action':'Do not pay the person. Follow up through your bank and the official complaint channel.','source':'CyberDost, Indian Cyber Crime Coordination Centre','url':'https://www.youtube.com/watch?v=Z6ElJlDNu50'},
+]
